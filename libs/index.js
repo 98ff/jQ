@@ -42,3 +42,9 @@ $("#box section").add("#box li").hover(function(){
 },function(){
     interval=setInterval(next,1000);
 })
+//  总结：  目前轮播图不能作为插件使用的原因
+//  1.插件不能使用id，因为插件会重复使用，页面上id要确保唯一性，不允许重复
+//  2.定义了很多变量和函数名，比较大众，如果引入其他插件，可能会冲突
+//  3.class的起名用prev和next也比较大众化。
+//  4.文件名命名上，我们推荐是基于jQuery写的插件
+//  命名如：jQuery.zyslides.js(这样使用就会知道我这个插件是有用到jQuery的)。
