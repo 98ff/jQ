@@ -10,7 +10,7 @@ $(function(){
 // 闭包的作用 ： 保留函数的作用域
 // 闭包形成的必要条件 ：函数套用函数(内部函数使用外部函数的变量)
 // 全局域能形成闭包吗？  不能全局域的作用域在全局
-(function(){
+$(function(){
     var states = [
         {ZIndex: 1,width: 120,height: 150,top: 69,left: 134,ZOpacity: 0.2},
         {ZIndex: 2,width: 130,height: 170,top: 59,left: 0,ZOpacity: 0.5},
@@ -55,10 +55,15 @@ $(function(){
     },function(){
         interval=setInterval(next,1000);
     })
-})();
+});
 //  总结：  目前轮播图不能作为插件使用的原因
 //  1.插件不能使用id，因为插件会重复使用，页面上id要确保唯一性，不允许重复
 //  2.定义了很多变量和函数名，比较大众，如果引入其他插件，可能会冲突
 //  3.class的起名用prev和next也比较大众化。
 //  4.文件名命名上，我们推荐是基于jQuery写的插件
 //  命名如：jQuery.zyslides.js(这样使用就会知道我这个插件是有用到jQuery的)。
+
+
+
+// 使用jQuery的自运行匿名函数可以把js引入放在头部
+// 因为jQuery的自运行匿名函数是在DOM加载完成后
