@@ -2,6 +2,10 @@
     // ele轮播图标签
     var slide =function(ele){
         var $ele = $(ele);
+        var settings={
+            delay:1000,
+            speed:1000,
+        }
         var states = [
             {ZIndex: 1,width: 120,height: 150,top: 69,left: 134,ZOpacity: 0.2},
             {ZIndex: 2,width: 130,height: 170,top: 59,left: 0,ZOpacity: 0.5},
@@ -18,7 +22,7 @@
             lis.each(function(index,ele){
                 var state=states[index];
                 $(ele).css("zIndex",state.ZIndex)
-                .finish().animate(state,1000)
+                .finish().animate(state,settings.delay)
                 .find("img").css("opacity",state.ZOpacity);
             });
         }
@@ -38,13 +42,13 @@
         // 保存定时器
         var interval=null;
         function autoPlay(){
-            interval=setInterval(next,1000);
+            interval=setInterval(next,settings.delay);
         }
         autoPlay();
         $ele.find("section,li").hover(function(){
             clearInterval(interval);
         },function(){
-            interval=setInterval(next,1000);
+            interval=setInterval(next,settings.delay);
         })
     }
     // slide($("#box"));
