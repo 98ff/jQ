@@ -1,0 +1,9 @@
+2aaf45ac054639772fedde52d3896cf3a5f2e1dc (HEAD -> master) 实现多个轮播图
+50e7cc9931684f52211a92bddb1b56881bce444c 不带参数的版本
+acc3e834231f8111993f71e187ed478a9f110929 完毕
+8e7cb147b307b936c76f10ae3ed0634e6e74f1b4 自运行函数和闭包理解
+3c017705c8d187ae1662fdd08b87d15524d3480a 总结
+2f86e0c354e4bc81b95501079aa3a08dc51690f7 轮播图基本功能完成
+5861acafed2fa76a1ccfa385c1855ff0a97b5a2c 必须引入第三方库和文件创建完成
+
+git reset --hard id
