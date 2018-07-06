@@ -1,11 +1,14 @@
 (function($){
     // ele轮播图标签
-    var slide =function(ele){
+    var slide =function(ele,options){
         var $ele = $(ele);
         var settings={
             delay:1000,
             speed:1000,
         }
+        // 合并对象
+        $.extend(true,settings,options);
+        console.log(settings);
         var states = [
             {ZIndex: 1,width: 120,height: 150,top: 69,left: 134,ZOpacity: 0.2},
             {ZIndex: 2,width: 130,height: 170,top: 59,left: 0,ZOpacity: 0.5},
@@ -42,20 +45,21 @@
         // 保存定时器
         var interval=null;
         function autoPlay(){
-            interval=setInterval(next,settings.delay);
+            interval=setInterval(next,settings.speed);
         }
         autoPlay();
         $ele.find("section,li").hover(function(){
             clearInterval(interval);
         },function(){
-            interval=setInterval(next,settings.delay);
+            interval=setInterval(next,settings.speed);
         })
     }
     // slide($("#box"));
-    $.fn.slide=function(){
+    $.fn.slide=function(options){
         $(this).each(function(i,ele){
-            slide(ele);
-        })
+            slide(ele,options);
+        });
+        return this;
     }
 })(jQuery);
 // 用插件类写插件

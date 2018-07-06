@@ -23,6 +23,19 @@
         </ul>
     </div>
 
+     <div id="box2" class="slide zy-slide">
+        <section class="prev">上一张</section>
+        <section class="next">下一张</section>
+        <ul>
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+            <li><img src="images/6.jpg" alt=""></li>
+            <li><img src="images/7.jpg" alt=""></li>
+        </ul>
+    </div>
 
 
 
@@ -33,7 +46,14 @@
     <!-- <script src="libs/index.js"></script> -->
     <script src="libs/jquery-slide.js"></script>
     <script>
-        $(".zy-slide").slide();
+        $("#box").slide({
+            // delay:500,
+            // speed:2000,
+        }).css("backgroundColor","red"); 
+        $("#box2").slide({
+            delay:500,
+            speed:2000,
+        });
     </script>
 </body>
 </html>
